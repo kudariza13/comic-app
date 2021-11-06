@@ -6,6 +6,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 ## Development server
 primero correr el comando npm install para instalar la carpeta ng_modules
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+instalar en chrome la extension: https://chrome.google.com/webstore/detail/moesif-origin-cors-change/digfbfaphojjndkpccljibejjbppifbc?utm_source=chrome-ntp-icon y encenderla, luego recargar la app
 
 ## Code scaffolding
 

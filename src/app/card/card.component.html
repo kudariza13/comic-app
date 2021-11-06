@@ -6,14 +6,12 @@
 </div> -->
 <div class='card'>
     <div class='card_left'>
-        <img [src]="image">
+        <img [src]="dataEntrante?.img">
     </div>
     <div class='card_right'>
-        <h1>KILL BILL: VOL. 1</h1>
-        <div class='card_right__details'>
-            <div class='card_right__button'>
-                <a href='https://www.youtube.com/watch?v=ot6C1ZKyiME' target='_blank'>VER COMIC</a>
-            </div>
+        <h1>{{dataEntrante?.title}}</h1>
+        <div class='card_right__button'>
+            <a [href]='dataEntrante?.link' target='_blank'>VER COMIC</a>
         </div>
     </div>
     <div class='card__rating'>

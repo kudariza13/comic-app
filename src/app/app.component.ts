@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { RestService } from './rest.service';
 
 @Component({
   selector: 'app-root',
@@ -7,30 +8,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AppComponent implements OnInit {
   title = 'comic-app';
-  public cards:Array<any> =[]
+  public listaComic:any = [];
+  constructor(private RestService:RestService){}
   ngOnInit(): void {
-    this.cards=[
-      {
-        title:'woodpecker',
-        link: 'https://imgs.xkcd.com/comics/snack.png',
-        img:'https://s3-us-west-2.amazonaws.com/s.cdpn.io/343086/h8fnwL1.png'
-      },
-      {
-        title:'woodpecker',
-        link: 'https://imgs.xkcd.com/comics/snack.png',
-        img:'https://s3-us-west-2.amazonaws.com/s.cdpn.io/343086/h8fnwL1.png'
-      },
-      {
-        title:'woodpecker',
-        link: 'https://imgs.xkcd.com/comics/snack.png',
-        img:'https://s3-us-west-2.amazonaws.com/s.cdpn.io/343086/h8fnwL1.png'
-      },
-      {
-        title:'woodpecker',
-        link: 'https://imgs.xkcd.com/comics/snack.png',
-        img:'https://s3-us-west-2.amazonaws.com/s.cdpn.io/343086/h8fnwL1.png'
-      }
-    ]
+    this.cargarData();
+  }
+  public cargarData(){
+    this.RestService.get(`https://xkcd.com/info.0.json`)
+    .subscribe(respuesta => {
+      this.listaComic = [respuesta];
+      console.log(respuesta);
+    })
   }
 
 }
